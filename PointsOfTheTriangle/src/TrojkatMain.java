@@ -2,9 +2,9 @@
 public class TrojkatMain {
 
 	public static void main(String[] args) {
-		Punkt P1=new Punkt(5,0);
-		Punkt P2=new Punkt(3,6);
-		Punkt P3=new Punkt(1,3);
+		Punkt P1=new Punkt(3,2);
+		Punkt P2=new Punkt(7,6);
+		Punkt P3=new Punkt(6,1);
 		int liczba=0;
 		
 		
