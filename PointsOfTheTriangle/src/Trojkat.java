@@ -108,12 +108,12 @@ public class Trojkat {
 		double war1,war2,war3;
 		
 	 
-		 a1=(double)(W2.getX() - W1.getX());
-		 a2=(double)(W3.getX() - W2.getX());	
-		 a3=(double)(W3.getX() - W1.getX());
-		 b1=W1.getY()-(a1*W1.getX());
-		 b2=W2.getY()-(a2*W2.getX());
-		 b3=W3.getY()-(a3*W3.getX());
+		 a1=(double)(W2.getX() - W1.getX())/(double)(W2.getY() - W1.getY());
+         a2=(double)(W3.getX() - W2.getX())/(double)(W3.getY() - W2.getY());    
+         a3=(double)(W3.getX() - W1.getX())/(double)(W3.getY() - W1.getY());
+         b1=(double)W1.getY()-(a1*(double)W1.getX());
+         b2=(double)W2.getY()-(a2*(double)W2.getX());
+         b3=(double)W3.getY()-(a3*(double)W3.getX());
 		 
 		 war1 = (a1 * (double)p.getX() -1.0 * (double)p.getY() + b1);
 		 war2 = (a2 * (double)p.getX() -1.0 * (double)p.getY() + b2);
