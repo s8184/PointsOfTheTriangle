@@ -99,7 +99,7 @@ public class Trojkat {
 		i="Mamy trójk¹t o wspó³rzêdnych P=(" + W1.getX() + "," + W1.getY() +") " + "Q=(" + W2.getX() + "," + W2.getY() +") " + "R=(" + W3.getX() + "," + W3.getY() + ") ";
 		return i;
 	}
-	
+	/*
 	private boolean CzyNalezy(Punkt p) {
 		boolean out = false;
 		// g³ówna metoda programu - sprawdza czy punkt p nale¿y do trójk¹ta
@@ -126,8 +126,8 @@ public class Trojkat {
 			 
 		 
 		 return out;
-	}
-	
+	}*/
+	/*
 	public int LiczbaPunktowWewnatrz() {
 		int liczba=0;
 		Obrys o;
@@ -145,6 +145,45 @@ public class Trojkat {
 		}
 		
 		return liczba;
-	}
+	}*/
 
+
+private int NWD(int a,int b) {
+    if (b == 0){ return a; }
+     
+    return NWD(b, (a % b));
+}
+
+public int LiczbaPunktowWewnatrzNWD() {
+    int out;
+    Obrys o = this.ObliczObrys();
+    int j,k,a,b,h1,h2,h3;
+    
+    j = o.getXmax()-o.getXmin();
+    k = o.getYmax()-o.getYmin();
+    
+    if (W1.getY()==o.getYmax())
+        a = W1.getX() - o.getXmin();
+    else
+        if (W2.getY()==o.getYmax())
+            a = W2.getX() - o.getXmin();
+        else
+            a = W3.getX() - o.getXmin();
+    
+    if (W1.getX()==o.getXmin())
+        b = o.getYmax() - W1.getY();
+    else
+        if (W2.getX()==o.getXmin())
+            b = o.getYmax() - W2.getY();
+        else
+            b = o.getYmax() - W3.getY();
+
+    h1 = NWD(a,b) - 1;
+    h2 = NWD(k, j-a) - 1;
+    h3 = NWD(j, k-b) - 1;
+    
+    out = (j-1) * (k-1) - h1 - h2 - h3 - ((a-1)*(b-1)-h1)/2 - ((j-a-1)*(k-1)-h2)/2 - ((j-1)*(k-b-1)-h3)/2;
+    
+    return out;
+	} 
 }

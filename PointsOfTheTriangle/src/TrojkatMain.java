@@ -9,10 +9,12 @@ public class TrojkatMain {
 		
 		
 		Trojkat t=new Trojkat(P1,P2,P3);
-		liczba = t.LiczbaPunktowWewnatrz();
-		
+		//liczba = t.LiczbaPunktowWewnatrz();
+		liczba = t.LiczbaPunktowWewnatrzNWD();
+        
+        System.out.println("Liczba punktów wewn¹trz trójk¹ta (nie licz¹c punktów na bokach): "+liczba);
 		System.out.println(t.info());
-		System.out.println("Liczba punktów wewn¹trz trójk¹ta (nie licz¹c punktów na bokach): "+liczba);
+		
 		}
 	}
 
